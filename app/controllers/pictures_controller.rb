@@ -58,4 +58,5 @@ class PicturesController < ApplicationController
     @picture = Picture.find(params[:id])
   end
 
+
 end
