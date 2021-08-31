@@ -34,5 +34,4 @@ ActiveRecord::Schema.define(version: 2021_08_29_032309) do
   end
 
   add_foreign_key "pictures", "users"
-
 end

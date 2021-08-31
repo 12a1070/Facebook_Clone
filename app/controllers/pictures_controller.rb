@@ -49,14 +49,23 @@ class PicturesController < ApplicationController
   def edit
   end
 
+  def new
+    @picture = Picture.new
+      if params[:back]
+        @picture =Picture.new(picture_params)
+      else
+      @picture =Picture.new
+      end
+  end
+
+  private
   def picture_params
     params.require(:picture).permit(:image, :image_cache, :content)
   end
 
-  private
+
   def set_picture
     @picture = Picture.find(params[:id])
   end
-
 
 end
