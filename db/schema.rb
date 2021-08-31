@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_08_29_032309) do
     t.string "title"
     t.text "content"
     t.bigint "user_id"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_pictures_on_user_id"
