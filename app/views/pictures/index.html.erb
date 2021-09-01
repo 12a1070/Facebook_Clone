@@ -12,7 +12,7 @@
       <div class="col-sm-6 col-md-4">
         <div class="content_list">
           <% @pictures.each do |picture| %>
-            <%=  image_tag picture.image.url %>
+            <%= image_tag(picture.image.url) if picture.image && picture.image.url %>
             <div class="caption">
               <h3><%= picture.user.name %></h3>
               <p><%= picture.content %></p>
