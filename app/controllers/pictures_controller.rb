@@ -2,7 +2,16 @@ class PicturesController < ApplicationController
   before_action :set_picture, only: %i[ show edit update destroy ]
 
   def index
-    @pictures = Picture.all
+    @pictures = Picture.all.order(id: "desc")
+  end
+
+  def new
+    @picture = Picture.new
+      if params[:back]
+        @picture =Picture.new(picture_params)
+      else
+      @picture =Picture.new
+      end
   end
 
   def confirm
@@ -47,15 +56,6 @@ class PicturesController < ApplicationController
   end
 
   def edit
-  end
-
-  def new
-    @picture = Picture.new
-      if params[:back]
-        @picture =Picture.new(picture_params)
-      else
-      @picture =Picture.new
-      end
   end
 
   private
